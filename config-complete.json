@@ -1,0 +1,26 @@
+{
+  "registry": "https://registry.domain.de",
+  "username": "user",
+  "password": "password",
+  "repositoriesIncluded": [
+    "repo1",
+    "repo4"
+  ],
+  "repositoriesIgnored": [
+    "repo2"
+  ],
+  "tagsIncluded": [
+    "\\d",
+    "test"
+  ],
+  "tagsIgnored": [
+    "develop","master"
+  ],
+  "isDryRun": true,
+  "keepLastTags": 20,
+  "tagNewerThan": 25,
+  "tagOlderThan": 20,
+  "repositorNewerThan": 25,
+  "repositoryOlderThan": 20
+}
+
