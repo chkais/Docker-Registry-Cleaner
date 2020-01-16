@@ -17,8 +17,12 @@ The logic behind include-exclude is:
 
 # Usage #
 ## With Docker ##
+You can find the current version on docker.hub: 
+https://hub.docker.com/repository/docker/chkais/docker-registry-cleaner
+
 Either mount a volume with the config.json into the working directory of the docker container.
 Otherwise the default configuration will be used.
+
 ### docker run example ###
 Create config.json as described above (or download and rename file from repository). Then run the docker container with the mounted config file:
 
@@ -29,10 +33,6 @@ Checkout the repository and build the file with gradle:
     
     gradle build
     
-A jar file is generated in the folder 'build/libs'.  From the the base directory you can run the application (important: a config.json must be present! )
-
-    java -jar build/libs/docker-registry-cleaner-1.0-SNAPSHOT.jar
-
 
 # Configuration #
 The application expects an config file 'config.json' in the working directory.
@@ -87,6 +87,9 @@ All Parameters except for the 'registry' parameter are optional.
 
 
 
+A jar file is generated in the folder 'build/libs'.  From the the base directory you can run the application (important: a config.json must be present! )
+
+    java -jar build/libs/docker-registry-cleaner-1.0-SNAPSHOT.jar
 
 
     
