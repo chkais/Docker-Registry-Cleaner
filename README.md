@@ -15,6 +15,23 @@ The logic behind include-exclude is:
  
  Same logic applies to tags
 
+# Usage #
+## With Docker ##
+Either mount a volume with the config.json into the working directory of the docker container.
+Otherwise the default configuration will be used.
+### docker run example ###
+Create config.json as described above (or download and rename file from repository). Then run the docker container with the mounted config file:
+
+    docker run -v "$(pwd)"/config.json:/config.json chkais/docker-registry-cleaner:0.1.0
+
+## From CommandLine ##
+Checkout the repository and build the file with gradle:
+    
+    gradle build
+    
+A jar file is generated in the folder 'build/libs'.  From the the base directory you can run the application (important: a config.json must be present! )
+
+    java -jar build/libs/docker-registry-cleaner-1.0-SNAPSHOT.jar
 
 
 # Configuration #
@@ -69,23 +86,7 @@ All Parameters except for the 'registry' parameter are optional.
  
 
 
-# Usage #
-## With Docker ##
-Either mount a volume with the config.json into the working directory of the docker container.
-Otherwise the default configuration will be used.
-### docker run example ###
-Create config.json as described above (or download and rename file from repository). Then run the docker container with the mounted config file:
 
-    docker run -v "$(pwd)"/config.json:/config.json chkais/docker-registry-cleaner:0.1.0
-
-## From CommandLine ##
-Checkout the repository and build the file with gradle:
-    
-    gradle build
-    
-A jar file is generated in the folder 'build/libs'.  From the the base directory you can run the application (important: a config.json must be present! )
-
-    java -jar build/libs/docker-registry-cleaner-1.0-SNAPSHOT.jar
 
 
     
