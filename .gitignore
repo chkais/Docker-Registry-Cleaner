@@ -4,3 +4,5 @@ config.json
 build
 gradlew*
 gradle/
+out
+.gradle

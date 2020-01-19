@@ -17,8 +17,12 @@ The logic behind include-exclude is:
 
 # Usage #
 ## With Docker ##
+You can find the current version on docker.hub: 
+https://hub.docker.com/repository/docker/chkais/docker-registry-cleaner
+
 Either mount a volume with the config.json into the working directory of the docker container.
 Otherwise the default configuration will be used.
+
 ### docker run example ###
 Create config.json as described above (or download and rename file from repository). Then run the docker container with the mounted config file:
 
