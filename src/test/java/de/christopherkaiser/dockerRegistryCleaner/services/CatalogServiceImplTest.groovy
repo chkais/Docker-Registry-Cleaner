@@ -1,12 +1,7 @@
 package de.christopherkaiser.dockerRegistryCleaner.services
 
-import de.christopherkaiser.dockerRegistryCleaner.api.RegistryConnector
-import de.christopherkaiser.dockerRegistryCleaner.api.Repository
-import de.christopherkaiser.dockerRegistryCleaner.api.dto.CatalogDTO
-import de.christopherkaiser.dockerRegistryCleaner.api.factory.CatalogFactory
-import spock.lang.Specification
 
-import java.time.LocalDateTime
+import spock.lang.Specification
 
 class CatalogServiceImplTest extends Specification {
     def "GetCatalog"() {

@@ -23,6 +23,7 @@ public class CatalogFactory {
     }
 
     public Catalog getCatalogFrom(CatalogDTO catalogDTO) {
+        validate(catalogDTO);
         List<Repository> repositories = Arrays.stream(catalogDTO.getRepositories())
                 .parallel()
                 .map(this::getRepositoryFromRepo)
@@ -33,6 +34,12 @@ public class CatalogFactory {
                 .repositories(repositories)
                 .repositoriesAsString(catalogDTO.getRepositories())
                 .build();
+    }
+
+    private void validate(CatalogDTO catalogDTO) {
+        if (catalogDTO == null){
+            throw new IllegalArgumentException("Could not get catalog from null!");
+        }
     }
 
     private Repository getRepositoryFromRepo(String repo) {
