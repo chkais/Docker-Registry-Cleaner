@@ -18,7 +18,13 @@ public class HistoryEntryFactory {
     }
 
     HistoryEntry createHistoryEntryFrom(HistoryEntryDTO historyEntryDTO) throws IOException {
+        validate(historyEntryDTO);
         V1Compatibility v1Compatibility = v1CompatibilityFactory.createFromJson(historyEntryDTO.getV1Compatibility());
         return HistoryEntry.builder().v1Compatibility(v1Compatibility).build();
+    }
+
+    private void validate(HistoryEntryDTO historyEntryDTO) {
+        if (historyEntryDTO == null)
+            throw new IllegalArgumentException("historyEntryDTO must not be null!");
     }
 }
