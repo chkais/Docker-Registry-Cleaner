@@ -37,7 +37,7 @@ class HistoryEntryFactoryTest extends Specification {
 
 
         when:
-        def historyEntry = historyEntryFactory.createHistoryEntryFrom(historyEntryDTO)
+        historyEntryFactory.createHistoryEntryFrom(historyEntryDTO)
 
         then:
         thrown(IllegalArgumentException)
